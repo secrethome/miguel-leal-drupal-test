@@ -8,6 +8,10 @@ more information, visit the Drupal website and join the Drupal community.
 
 ## Getting started
 
+### Local Setup
+
+I use [Docksal](https://docksal.io/) for local development.
+
 ### Git clone the project on your local machine:
 
 ```bash
@@ -15,10 +19,17 @@ git clone git@github.com:secrethome/miguel-leal-drupal-test.git
 cd miguel-leal-drupal-test
 ```
 
+#### Set up Docksal:
+
+```bash
+fin system start
+fin start
+```
+
 ### Run composer install:
 
 ```bash
-composer install
+fin composer install
 ```
 
 ## Setup your environment settings:
@@ -33,7 +44,7 @@ cp .env.example .env
 ### Install a clean site using the existing and pre-exported configs:
 
 ```bash
-drush site:install minimal --existing-config
+fin drush site:install minimal --existing-config
 ```
 
 ### If you decide to setup the site by import an existing database:
@@ -41,23 +52,33 @@ drush site:install minimal --existing-config
 Run the following command to import a db:
 
 ```bash
-drush sql-cli < /path/to/db-exported.sql
+fin drush sql-cli < /path/to/db-exported.sql
 ```
 
 ### Finally:
 
 ```bash
-drush cr
+fin drush cr
 ```
 
 ```bash
-drush config-import -y
+fin drush config-import -y
+```
+
+## Install pre-defined taxonomies for basic pages.
+
+```bash
+fin drush calibrate:create_basic_pages_terms
+```
+
+## Compile sass styles.
+
+```bash
+cd web/themes/custom/calibrate_drupal_test && npm install && npm run prod
 ```
 
 ### Quick tip: generating a hash salt for Drupal
 
 ```bash
-drush php-eval 'echo \Drupal\Component\Utility\Crypt::randomBytesBase64(55) . "\n";'
+fin drush php-eval 'echo \Drupal\Component\Utility\Crypt::randomBytesBase64(55) . "\n";'
 ```
-
-### Troubleshooting
