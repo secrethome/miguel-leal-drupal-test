@@ -1,0 +1,30 @@
+uuid: 97ddacad-61af-4f77-8568-090d174db888
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.news_overview
+  module:
+    - calibrate_base
+    - views
+  theme:
+    - calibrate_drupal_test
+id: views_block__news_overview_news_overview
+theme: calibrate_drupal_test
+region: content
+weight: -6
+provider: null
+plugin: 'views_block:news_overview-news_overview'
+settings:
+  id: 'views_block:news_overview-news_overview'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  basic_page_id:
+    id: basic_page_id
+    basic_page_ids:
+      news_overview: news_overview
+    negate: false

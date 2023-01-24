@@ -1,0 +1,28 @@
+uuid: b457fa43-9902-4f7e-946f-493724064558
+langcode: en
+status: true
+dependencies:
+  module:
+    - calibrate_base
+    - node
+  theme:
+    - calibrate_drupal_test
+id: relatedarticlesblock
+theme: calibrate_drupal_test
+region: bottom_content
+weight: 0
+provider: null
+plugin: related_articles_block
+settings:
+  id: related_articles_block
+  label: 'Related articles'
+  label_display: '0'
+  provider: calibrate_base
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article

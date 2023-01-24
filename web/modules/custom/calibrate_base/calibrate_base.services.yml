@@ -1,0 +1,6 @@
+services:
+  basic_pages.helper:
+    class: Drupal\calibrate_base\Helper\BasicPagesHelper
+    arguments:
+      - '@entity_type.manager'
+      - '@current_route_match'

@@ -1,0 +1,22 @@
+uuid: 38acd7ad-70a3-4559-9b00-b4a2e4f3572c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - calibrate_drupal_test
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: calibrate_drupal_test_primary_local_tasks
+theme: calibrate_drupal_test
+region: messages
+weight: -3
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

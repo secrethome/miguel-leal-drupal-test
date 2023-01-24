@@ -1,0 +1,19 @@
+uuid: 91ef525c-8e82-41bc-8bb0-067bb2b38864
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - footer
+      - main
+    parent: 'main:'
+name: 'Basic page'
+type: basic_page
+description: 'Use this content type to publish a static page on your site.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

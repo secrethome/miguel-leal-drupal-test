@@ -1,0 +1,5 @@
+name: Calibrate Base
+type: module
+description: 'Handles custom configurations for the site.'
+package: Custom
+core_version_requirement: ^9.5 || ^10

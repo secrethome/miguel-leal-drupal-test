@@ -1,0 +1,25 @@
+uuid: ec44a6e9-8a28-40ce-9e55-21f3dcbdfcf0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.basic_page.field_main_image
+    - field.field.node.basic_page.field_page_id
+    - node.type.basic_page
+  module:
+    - user
+id: node.basic_page.full
+targetEntityType: node
+bundle: basic_page
+mode: full
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_main_image: true
+  field_page_id: true
+  langcode: true

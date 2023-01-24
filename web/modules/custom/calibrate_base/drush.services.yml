@@ -1,0 +1,8 @@
+services:
+  calibrate_base.commands:
+    class: \Drupal\calibrate_base\Commands\BasicPagesTermsDrushCommands
+    tags:
+      - { name: drush.command }
+    arguments:
+      - '@entity_type.manager'
+      - '@logger.factory'

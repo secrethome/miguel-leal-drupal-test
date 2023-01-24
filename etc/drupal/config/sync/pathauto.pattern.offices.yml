@@ -1,0 +1,22 @@
+uuid: aac20678-16a3-4e2e-861d-631b0d01906b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: offices
+label: offices
+type: 'canonical_entities:node'
+pattern: '/[basic-page:path:offices_overview]/[node:title]'
+selection_criteria:
+  8ccfbe5c-2857-410c-aa24-9782a1bc9f35:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 8ccfbe5c-2857-410c-aa24-9782a1bc9f35
+    context_mapping:
+      node: node
+    bundles:
+      offices: offices
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,17 @@
+uuid: c7934f01-584e-408a-9a16-6886cbcdfb67
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Office
+type: offices
+description: 'Use this content type to publish an office on your site.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

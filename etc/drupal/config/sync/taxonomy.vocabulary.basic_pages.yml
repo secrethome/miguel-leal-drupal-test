@@ -1,0 +1,8 @@
+uuid: ac365cbf-7d00-4bca-b14c-c002cd7c48a3
+langcode: en
+status: true
+dependencies: {  }
+name: 'Basic Pages'
+vid: basic_pages
+description: 'Provides a way to place blocks on specific pages without content references.'
+weight: 0

@@ -1,0 +1,94 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Render\BubbleableMetadata;
+use Drupal\node\NodeInterface;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_token_info().
+ *
+ * Adds the token info for returning a path alias for a given basic pages.
+ */
+function calibrate_base_token_info(): array {
+  return [
+    'tokens' => [
+      'basic-page' => [
+        'path' => [
+          'name' => t('Path'),
+          'description' => t('The path alias of the given basic page.'),
+          'dynamic' => TRUE,
+        ],
+      ],
+    ],
+    'types' => [
+      'basic-page' => [
+        'name' => t('Basic page'),
+        'description' => t('Tokens related to the basic page entity.'),
+        'type' => 'basic-page',
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_tokens().
+ *
+ * Adds token handling for returning the path alias of a given basic page.
+ */
+function calibrate_base_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata): array {
+  $replacements = [];
+
+  if ($type !== 'basic-page') {
+    return $replacements;
+  }
+
+  /** @var \Drupal\calibrate_base\Helper\BasicPagesHelper $basic_pages_helper */
+  $basic_pages_helper = \Drupal::service('basic_pages.helper');
+  $token_service = \Drupal::token();
+
+  if (!empty($calibrate_base_tokens = $token_service->findWithPrefix($tokens, 'path'))) {
+    foreach ($calibrate_base_tokens as $name => $original) {
+      if ($path = $basic_pages_helper->getPath($name)) {
+        $replacements[$original] = $path;
+      }
+    }
+  }
+
+  return $replacements;
+}
+
+/**
+ * Implements hook_views_pre_view().
+ *
+ * Sets the contextual filter nid in order to get the correct header image.
+ */
+function calibrate_base_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
+  if ($view->id() === 'top_header') {
+    /** @var \Drupal\calibrate_base\Helper\BasicPagesHelper $basic_pages_helper */
+    $basic_pages_helper = \Drupal::service('basic_pages.helper');
+    $node = \Drupal::routeMatch()->getParameter('node');
+
+    if ($node instanceof NodeInterface && $node->getType() !== 'basic_page') {
+      switch ($node->getType()) {
+        case 'news':
+          $basic_page_id = 'news_overview';
+          break;
+
+        case 'article':
+          $basic_page_id = 'articles_overview';
+          break;
+
+        default:
+          $basic_page_id = 'offices_overview';
+          break;
+      }
+
+      $basic_page_node = $basic_pages_helper->getBasicPage($basic_page_id);
+      $args[0] = $basic_page_node->id();
+    }
+  }
+}

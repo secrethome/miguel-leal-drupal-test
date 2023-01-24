@@ -1,0 +1,16 @@
+uuid: 91cc17fb-19ce-49a3-b35e-b3c38e9d42ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.basic_pages.field_machine_name
+    - taxonomy.vocabulary.basic_pages
+id: taxonomy_term.basic_pages.default
+targetEntityType: taxonomy_term
+bundle: basic_pages
+mode: default
+content: {  }
+hidden:
+  description: true
+  field_machine_name: true
+  langcode: true

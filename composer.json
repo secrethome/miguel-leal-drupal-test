@@ -17,9 +17,15 @@
     "require": {
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
+        "drupal/address": "^1.11",
+        "drupal/better_exposed_filters": "^6.0",
         "drupal/core-composer-scaffold": "^10.0",
         "drupal/core-project-message": "^10.0",
         "drupal/core-recommended": "^10.0",
+        "drupal/field_group": "^3.4",
+        "drupal/machine_name_field_widget": "^1.0",
+        "drupal/pathauto": "^1.11",
+        "drupal/rabbit_hole": "^1.0@beta",
         "drush/drush": "^11.4",
         "vlucas/phpdotenv": "^5.5"
     },

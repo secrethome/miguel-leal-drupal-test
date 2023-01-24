@@ -1,0 +1,28 @@
+uuid: f7891627-9379-4408-89ff-2c0310acf403
+langcode: en
+status: true
+dependencies:
+  module:
+    - calibrate_base
+    - node
+  theme:
+    - calibrate_drupal_test
+id: relatedarticlesbycountryblock
+theme: calibrate_drupal_test
+region: bottom_content
+weight: 0
+provider: null
+plugin: related_articles_by_country_block
+settings:
+  id: related_articles_by_country_block
+  label: 'Related articles by country block'
+  label_display: '0'
+  provider: calibrate_base
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      offices: offices

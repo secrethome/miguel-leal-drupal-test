@@ -1,0 +1,48 @@
+uuid: d9e5f3bf-0daa-4ec0-a8bc-d9506d1cac4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.top_header
+    - field.field.node.article.body
+    - field.field.node.article.field_country
+    - field.field.node.article.field_image
+    - field.field.node.article.field_main_description
+    - field.field.node.article.field_main_image
+    - field.field.node.article.field_tags
+    - image.style.wide
+    - node.type.article
+  module:
+    - media
+    - user
+id: node.article.top_header
+targetEntityType: node
+bundle: article
+mode: top_header
+content:
+  field_main_description:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_main_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  body: true
+  field_country: true
+  field_image: true
+  field_tags: true
+  langcode: true
+  links: true

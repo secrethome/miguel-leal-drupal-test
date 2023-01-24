@@ -1,0 +1,185 @@
+uuid: 213bad15-55a6-4afd-9537-be49716dcf6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.offices.field_address
+    - field.field.node.offices.field_contact_person
+    - field.field.node.offices.field_email
+    - field.field.node.offices.field_fax
+    - field.field.node.offices.field_image
+    - field.field.node.offices.field_phone
+    - node.type.offices
+  module:
+    - address
+    - field_group
+    - media_library
+    - path
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_page_content
+      label: Tabs
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_page_content:
+      children:
+        - group_basic_settings
+        - group_office_info
+      label: 'Page content'
+      region: content
+      parent_name: group_tabs
+      weight: 4
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_basic_settings:
+      children:
+        - title
+        - field_image
+      label: 'Basic settings'
+      region: content
+      parent_name: group_page_content
+      weight: 5
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_office_info:
+      children:
+        - field_address
+        - field_phone
+        - field_fax
+        - field_email
+        - field_contact_person
+      label: 'Office Info'
+      region: content
+      parent_name: group_page_content
+      weight: 6
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+id: node.offices.default
+targetEntityType: node
+bundle: offices
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_address:
+    type: address_default
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_contact_person:
+    type: string_textfield
+    weight: 8
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_email:
+    type: email_default
+    weight: 7
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_fax:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: media_library_widget
+    weight: 2
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_phone:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true

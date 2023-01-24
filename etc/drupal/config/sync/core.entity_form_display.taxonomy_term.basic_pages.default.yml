@@ -1,0 +1,35 @@
+uuid: 481e7189-b38f-4521-a80f-e6ca5e2c3f7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.basic_pages.field_machine_name
+    - taxonomy.vocabulary.basic_pages
+  module:
+    - machine_name_field_widget
+id: taxonomy_term.basic_pages.default
+targetEntityType: taxonomy_term
+bundle: basic_pages
+mode: default
+content:
+  field_machine_name:
+    type: machine_name_field_widget
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  langcode: true
+  path: true
+  status: true

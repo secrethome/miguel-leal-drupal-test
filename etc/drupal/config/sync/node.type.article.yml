@@ -1,0 +1,17 @@
+uuid: 6c9f70ba-f129-4b21-bc96-691c8e8c09ac
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Article
+type: article
+description: 'Use this content type to publish an article on your site.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

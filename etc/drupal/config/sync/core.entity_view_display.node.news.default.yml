@@ -1,0 +1,33 @@
+uuid: a99f3a05-0164-4fae-acc5-b017e89696b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.news.body
+    - field.field.node.news.field_image
+    - field.field.node.news.field_main_description
+    - field.field.node.news.field_main_image
+    - field.field.node.news.field_related_news
+    - node.type.news
+  module:
+    - user
+id: node.news.default
+targetEntityType: node
+bundle: news
+mode: default
+content:
+  field_main_description:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  body: true
+  field_image: true
+  field_main_image: true
+  field_related_news: true
+  langcode: true
+  links: true

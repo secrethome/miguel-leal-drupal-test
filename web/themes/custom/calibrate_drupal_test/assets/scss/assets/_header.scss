@@ -1,0 +1,25 @@
+header {
+  .block-system-branding-block {
+    .site-logo {
+      img {
+        width: 100px;
+      }
+    }
+  }
+
+  nav.menu--main {
+    @extend .ml-auto, .justify-between;
+
+    ul {
+      @extend .flex;
+
+      li {
+        @extend .fw5, .f3, .pa2, .ph4, .list;
+
+        a {
+          @extend .no-underline, .dark-gray
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+uuid: c1160038-a783-4c6e-bd8d-4d02dd99dbf8
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.offices_overview
+  module:
+    - calibrate_base
+    - views
+  theme:
+    - calibrate_drupal_test
+id: views_block__offices_overview_offices_overview
+theme: calibrate_drupal_test
+region: content
+weight: -7
+provider: null
+plugin: 'views_block:offices_overview-offices_overview'
+settings:
+  id: 'views_block:offices_overview-offices_overview'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  basic_page_id:
+    id: basic_page_id
+    basic_page_ids:
+      offices_overview: offices_overview
+    negate: false

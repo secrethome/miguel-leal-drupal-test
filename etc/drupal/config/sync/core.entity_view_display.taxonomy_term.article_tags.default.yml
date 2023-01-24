@@ -1,0 +1,14 @@
+uuid: 243cb337-f911-402b-baae-62f077bb432b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.article_tags
+id: taxonomy_term.article_tags.default
+targetEntityType: taxonomy_term
+bundle: article_tags
+mode: default
+content: {  }
+hidden:
+  description: true
+  langcode: true

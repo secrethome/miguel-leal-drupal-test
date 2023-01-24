@@ -1,0 +1,41 @@
+uuid: 82001984-0f53-4235-8df4-a05da33a4c62
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.related
+    - field.field.node.article.body
+    - field.field.node.article.field_country
+    - field.field.node.article.field_image
+    - field.field.node.article.field_main_description
+    - field.field.node.article.field_main_image
+    - field.field.node.article.field_tags
+    - image.style.medium
+    - node.type.article
+  module:
+    - media
+    - user
+id: node.article.related
+targetEntityType: node
+bundle: article
+mode: related
+content:
+  field_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_country: true
+  field_main_description: true
+  field_main_image: true
+  field_tags: true
+  langcode: true
+  links: true

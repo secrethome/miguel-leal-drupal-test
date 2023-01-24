@@ -1,0 +1,19 @@
+uuid: 7d3a7106-521e-46cd-b09c-5eb5cdf3a3bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fax
+    - node.type.offices
+id: node.offices.field_fax
+field_name: field_fax
+entity_type: node
+bundle: offices
+label: Fax
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

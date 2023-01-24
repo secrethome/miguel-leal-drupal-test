@@ -1,0 +1,8 @@
+uuid: 47ce655b-6726-4891-9e53-b8c3052461c0
+langcode: en
+status: true
+dependencies: {  }
+name: 'Article Tags'
+vid: article_tags
+description: 'Contains a list of article tags within the site.'
+weight: 0

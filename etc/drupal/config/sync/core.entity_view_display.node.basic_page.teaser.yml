@@ -1,0 +1,33 @@
+uuid: 221972fd-5f76-4b06-be0e-8a0d618996f4
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.basic_page.field_main_image
+    - field.field.node.basic_page.field_page_id
+    - image.style.wide
+    - node.type.basic_page
+  module:
+    - media
+    - user
+id: node.basic_page.teaser
+targetEntityType: node
+bundle: basic_page
+mode: teaser
+content:
+  field_main_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_page_id: true
+  langcode: true
+  links: true

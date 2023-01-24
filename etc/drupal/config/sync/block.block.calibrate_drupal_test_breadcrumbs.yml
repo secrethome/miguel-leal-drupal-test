@@ -1,0 +1,32 @@
+uuid: c46398c4-16ef-4b64-a3a7-3f05449582a7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+  theme:
+    - calibrate_drupal_test
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: calibrate_drupal_test_breadcrumbs
+theme: calibrate_drupal_test
+region: messages
+weight: -7
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article
+      news: news
+      offices: offices

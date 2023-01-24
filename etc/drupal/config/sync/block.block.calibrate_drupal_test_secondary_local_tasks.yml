@@ -1,0 +1,22 @@
+uuid: b2ea9dfd-8857-4c1a-8aa9-3ab4883b5157
+langcode: en
+status: true
+dependencies:
+  theme:
+    - calibrate_drupal_test
+_core:
+  default_config_hash: ydSxdq7R66I8UMC460rOzlfzvlUL4VRbdwc6z9DWaUI
+id: calibrate_drupal_test_secondary_local_tasks
+theme: calibrate_drupal_test
+region: messages
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

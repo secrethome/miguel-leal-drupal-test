@@ -1,0 +1,25 @@
+uuid: 14be1633-9323-43dc-a0d2-fe4c4ce8ffd8
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.top_header
+  module:
+    - views
+  theme:
+    - calibrate_drupal_test
+id: calibrate_drupal_test_views_block__top_header_top_header
+theme: calibrate_drupal_test
+region: highlighted
+weight: -9
+provider: null
+plugin: 'views_block:top_header-top_header'
+settings:
+  id: 'views_block:top_header-top_header'
+  label: ''
+  label_display: '0'
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility: {  }

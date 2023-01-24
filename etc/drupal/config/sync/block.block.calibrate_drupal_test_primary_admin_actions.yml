@@ -1,0 +1,20 @@
+uuid: 920f4cf1-9cdc-4edd-aba4-19232fb35e98
+langcode: en
+status: true
+dependencies:
+  theme:
+    - calibrate_drupal_test
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: calibrate_drupal_test_primary_admin_actions
+theme: calibrate_drupal_test
+region: messages
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

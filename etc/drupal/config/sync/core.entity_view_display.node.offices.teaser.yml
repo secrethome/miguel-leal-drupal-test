@@ -1,0 +1,41 @@
+uuid: 9cec1212-7bc6-4908-a403-14b18a1cd214
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.offices.field_address
+    - field.field.node.offices.field_contact_person
+    - field.field.node.offices.field_email
+    - field.field.node.offices.field_fax
+    - field.field.node.offices.field_image
+    - field.field.node.offices.field_phone
+    - image.style.medium
+    - node.type.offices
+  module:
+    - media
+    - user
+id: node.offices.teaser
+targetEntityType: node
+bundle: offices
+mode: teaser
+content:
+  field_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_address: true
+  field_contact_person: true
+  field_email: true
+  field_fax: true
+  field_phone: true
+  langcode: true
+  links: true

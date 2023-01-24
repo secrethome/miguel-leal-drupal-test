@@ -1,0 +1,7 @@
+styling:
+  version: 1.0
+  css:
+    layout:
+      assets/css/assets/main.css: { minified: true }
+  dependencies:
+    - core/drupal

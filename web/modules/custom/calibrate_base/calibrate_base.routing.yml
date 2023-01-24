@@ -1,0 +1,8 @@
+calibrate_base.basic_page.redirect:
+  path: '/basic_page/{id}'
+  defaults:
+    _controller: '\Drupal\calibrate_base\Controller\BasicPagesController::redirectTo'
+    _title: 'Basic page: Redirect'
+  requirements:
+    _permission: 'view published content'
+    media: \d+

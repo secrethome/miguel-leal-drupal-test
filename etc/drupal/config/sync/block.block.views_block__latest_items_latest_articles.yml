@@ -1,0 +1,30 @@
+uuid: a95ce38b-bccd-4891-88ae-63012a2609e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.latest_items
+  module:
+    - calibrate_base
+    - views
+  theme:
+    - calibrate_drupal_test
+id: views_block__latest_items_latest_articles
+theme: calibrate_drupal_test
+region: top_content
+weight: -7
+provider: null
+plugin: 'views_block:latest_items-latest_articles'
+settings:
+  id: 'views_block:latest_items-latest_articles'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  basic_page_id:
+    id: basic_page_id
+    basic_page_ids:
+      homepage: homepage
+    negate: false

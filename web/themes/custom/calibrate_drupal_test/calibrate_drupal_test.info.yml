@@ -1,0 +1,18 @@
+name: Calibrate Drupal Test
+type: theme
+description: 'Custom theme for Calibrate Drupal Test'
+package: Other
+core_version_requirement: ^9 || ^10
+base theme: claro
+
+libraries:
+  - calibrate_drupal_test/styling
+
+regions:
+  highlighted: 'Highlighted'
+  header: 'Header'
+  messages: 'Messages'
+  top_content: 'Top content'
+  content: 'Main content'
+  bottom_content: 'Bottom content'
+  footer: 'Footer'

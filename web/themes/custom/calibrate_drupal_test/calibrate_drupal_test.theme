@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\file\FileInterface;
+
+/**
+ * Implements hook_preprocess().
+ *
+ * Adds a theme variable with the main image url.
+ */
+function calibrate_drupal_test_preprocess_node__news__top_header(array &$variables) {
+  _calibrate_drupal_test_get_background_image($variables);
+}
+
+/**
+ * Implements hook_preprocess().
+ *
+ * Adds a theme variable with the main image url.
+ */
+function calibrate_drupal_test_preprocess_node__article__top_header(array &$variables) {
+  _calibrate_drupal_test_get_background_image($variables);
+}
+
+/**
+ * Adds a theme variable with the main image url.
+ *
+ * @param array $variables
+ *   The list of theme variables.
+ */
+function _calibrate_drupal_test_get_background_image(array &$variables): void {
+  /** @var \Drupal\node\NodeInterface $node */
+  $node = $variables['node'];
+  $variables['background_image_url'] = NULL;
+
+  if ($node->hasField('field_main_image') && !$node->get('field_main_image')->isEmpty()) {
+    /** @var \Drupal\media\MediaInterface $media */
+    $media = $node->get('field_main_image')->first()->entity;
+    $fid = $media->getSource()->getSourceFieldValue($media);
+
+    if (!empty($fid)) {
+      $file_storage = \Drupal::entityTypeManager()->getStorage('file');
+      $image = $file_storage->load($fid);
+
+      if ($image instanceof FileInterface) {
+        $image_uri = $image->getFileUri();
+        $variables['background_image_url'] = \Drupal::entityTypeManager()
+          ->getStorage('image_style')
+          ->load('wide')
+          ->buildUrl($image_uri);
+      }
+    }
+  }
+}

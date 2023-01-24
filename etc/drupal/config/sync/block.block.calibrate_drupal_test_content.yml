@@ -1,0 +1,22 @@
+uuid: ce5253fa-f79e-40e2-ba6c-2f7203f8ad57
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - calibrate_drupal_test
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: calibrate_drupal_test_content
+theme: calibrate_drupal_test
+region: content
+weight: -8
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }
